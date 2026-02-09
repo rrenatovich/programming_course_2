@@ -4,7 +4,7 @@
 // TODO: реализуйте решение по заданию в labs/lab13_linear_algebra/README.md
 //
 // asda
-// asd
+// asdasdasdasd
 // asd
 // 
 // Рекомендация по выводу:
