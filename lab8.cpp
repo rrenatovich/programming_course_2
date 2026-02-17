@@ -68,21 +68,54 @@ int main() {
     int* arr11 = new int[SIZE1];
     int* arr22 = new int[SIZE2];
 
-    cout << "Массив A: ";
+    cout << "\nМассив A: ";
     for (int i = 0; i < SIZE1; i++) {
-        arr11[i] = 1+rand() % 100;  
+        arr11[i] = 1+rand() % 10;  
         cout << arr11[i] << " ";
     }
     cout << endl;
 
      cout << "Массив B: ";
     for (int i = 0; i < SIZE2; i++) {
-        arr22[i] = 1+rand() % 100;  
+        arr22[i] = 1+rand() % 10;  
         cout << arr22[i] << " ";
     }
     cout << endl;
 
-    cout<< arr22;
 
+    int size3 = SIZE1 + SIZE2;
+    int* arr33 = new int[size3];
 
+    int i = 0;
+    int j = 0;
+    int k = 0;
+
+    while (i < SIZE1 && j < SIZE2) {
+        if (arr11[i] < arr22[j]) {
+            arr33[k] = arr11[i];  
+            i++;  
+        } else {
+            arr33[k] = arr22[j];  
+            j++;  
+        }
+        k++; 
+    }
+
+    while (i < SIZE1) {
+        arr33[k] = arr11[i];
+        i++;
+        k++;
+    }
+
+    while (j < SIZE2) {
+        arr33[k] = arr22[j];
+        j++;
+        k++;
+    }
+
+    cout << "Результат слияния: ";
+    for (int i = 0; i < size3; i++) {
+        cout << arr33[i] << " ";
+    }
+    cout << endl;
 }
