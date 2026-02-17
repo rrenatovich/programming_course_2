@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>  
 #include <ctime>
+#include <algorithm>
 using namespace std;
 
 int main() {
@@ -81,6 +82,9 @@ int main() {
         cout << arr22[i] << " ";
     }
     cout << endl;
+
+    sort(arr11, arr11+SIZE1);
+    sort(arr22, arr22+SIZE2);
 
 
     int size3 = SIZE1 + SIZE2;
