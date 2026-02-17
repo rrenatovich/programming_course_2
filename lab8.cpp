@@ -18,6 +18,8 @@ int main() {
     cout << endl;
     
 
+
+
     cout << "\nСтатический массив + указатели" << endl;
     int arr2[SIZE];
 
@@ -29,4 +31,8 @@ int main() {
         cout << *ptr2 << " ";
         ptr2++; 
     }
+    ptr2 = arr2;
+
+
+
 }
