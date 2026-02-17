@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int SIZE = 10;
+
+    cout << "\nСтатический массив + индексы" << endl;
+    int arr1[SIZE];
+
+    for (int i = 0; i < SIZE; i++) {
+        arr1[i] = i * i;  // квадрат индекса
+    }
+
+    cout << "Результат: ";
+    for (int i = 0; i < SIZE; i++) {
+        cout << arr1[i] << " ";
+    }
+    cout << endl;
+    
+
+}
