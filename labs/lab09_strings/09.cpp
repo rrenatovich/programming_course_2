@@ -63,7 +63,7 @@ void zadanie_na_massiv() {
         bool valid = false;
         while (!valid) {
             cout << "  Слово " << i + 1 << ": ";
-            cin.getline(cWords[i], max_words_len + 1);
+            cin.getline(cWords[i], max_words_len*2 + 1);
             
             if (cin.fail()) {
                 cin.clear();
@@ -109,7 +109,7 @@ void zadanie_na_massiv() {
             if (sWords[i].length() == 0) {
                 cout << "ошибка, слово не может быть пустым, введите снова: " << endl;
             }
-            else if (sWords[i].length() > max_words_len) {
+            else if (sWords[i].length() > max_words_len*2) {
                 cout << "ошибка, слово слишком длинное, введите снова: " << endl;
             }
             else {
