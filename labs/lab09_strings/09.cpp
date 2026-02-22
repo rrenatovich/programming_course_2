@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+
 void demchar() {
     cout << "char" << endl;
     
@@ -59,8 +60,23 @@ void zadanie_na_massiv() {
 
     cout << "Введите слова: " << endl;
     for (int i = 0; i < n; i++) {
-        cout << "  Слово " << i + 1 << ": ";
-        cin.getline(cWords[i], max_words_len + 1); 
+        bool valid = false;
+        while (!valid) {
+            cout << "  Слово " << i + 1 << ": ";
+            cin.getline(cWords[i], max_words_len + 1);
+            
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "ошибка, слово слишком длинное, введите снова: " << endl;
+            }
+            else if (strlen(cWords[i]) == 0) {
+                cout << "ошибка, слово не может быть пустым, введите снова: " << endl;
+            }
+            else {
+                valid = true;
+            }
+        }
     } 
 
     cout << "cлова с четными номерами: ";
@@ -85,8 +101,21 @@ void zadanie_na_massiv() {
 
     cout << "введите слова:" << endl;
     for (int i = 0; i < m; i++) {
-        cout << "  Слово " << i + 1 << ": ";
-        getline(cin, sWords[i]);
+        bool valid = false;
+        while (!valid) {
+            cout << "  Слово " << i + 1 << ": ";
+            getline(cin, sWords[i]);
+            
+            if (sWords[i].length() == 0) {
+                cout << "ошибка, слово не может быть пустым, введите снова: " << endl;
+            }
+            else if (sWords[i].length() > max_words_len) {
+                cout << "ошибка, слово слишком длинное, введите снова: " << endl;
+            }
+            else {
+                valid = true;
+            }
+        }
     }
 
     cout << "слова с четными номерами: ";
@@ -98,6 +127,7 @@ void zadanie_na_massiv() {
 
 }
 int main() {
+    setlocale(LC_ALL, "Russian");
     demchar();
     demstring();
     zadanie_na_massiv();
